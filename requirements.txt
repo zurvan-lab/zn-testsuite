@@ -1,0 +1,2 @@
+websockets==13.0.1
+nostr-sdk==0.34.0

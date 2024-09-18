@@ -21,7 +21,9 @@ all kind of contribution is welcomed and open.
 feel free to open a pr and make code contribution or just open an issue to suggest new features or report bugs.
 you can make financial contribution and support using bitcoin and lightning:
 
-**btc**: ```bc1qxd3p6a46uzae86elteha7tygcz7f56mvvlznza```
+**btc**: 
+```bc1qxd3p6a46uzae86elteha7tygcz7f56mvvlznza```
+
 **lightning**: ```todo```
 
 # license
