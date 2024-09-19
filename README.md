@@ -6,15 +6,11 @@ the zn test suite is a nostr relay test suite which helps relay developers to te
 > this repo is work in progress and is not useable.
 
 
-# roadmap
+## roadmap
 
-- [ ] normal test for nips, correct implementation.
-- [ ] fuzz test.
-- [ ] stress test.
-- [ ] running as github action.
-- [ ] standard rate and measurement.
+you can checkout the [roadmap here](./todo.md).
 
-# contribution
+## contribution
 
 all kind of contribution is welcomed and open.
 
@@ -23,10 +19,12 @@ you can make financial contribution and support using bitcoin and lightning:
 
 **btc**:
 
-```bc1qxd3p6a46uzae86elteha7tygcz7f56mvvlznza```
+```
+bc1qxd3p6a46uzae86elteha7tygcz7f56mvvlznza
+```
 
 **lightning**: ```todo```
 
-# license
+## license
 
 this software is published under [mit license](./LICENSE).
