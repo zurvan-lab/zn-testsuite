@@ -4,11 +4,13 @@
 from __future__ import annotations
 
 import json
+import random
+import string
 from typing import Dict, List, Optional
 
-from nostr.event import Event
+from secp256k1 import PrivateKey
 
-# TODO::: invalid filter, random filter and more.
+from nostr.event import Event
 
 
 class Filter:

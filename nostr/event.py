@@ -9,8 +9,6 @@ from typing import List
 
 from secp256k1 import PrivateKey
 
-# TODO(@anyone)::: invalid event, random event, check equity and more.
-
 
 class Event:
     def __init__(

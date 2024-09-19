@@ -7,8 +7,6 @@ import json
 
 from .event import Event
 
-# TODO::: invalid message, random message and more.
-
 
 class Message:
     def __init__(self, message_type: str, data: Event) -> None:
