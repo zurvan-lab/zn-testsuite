@@ -59,13 +59,13 @@ class Event:
         return self.kind < 10000 and self.kind != 0 and self.kind != 3
 
     def is_replaceable(self) -> bool:
-        return self.kind == 0 or self.kind == 3 or (10000 <= self.kind and self.kind < 20000)
+        return self.kind == 0 or self.kind == 3 or (self.kind >= 10000 and self.kind < 20000)
 
     def is_ephemeral(self) -> bool:
-        return 20000 <= self.kind and self.kind < 30000
+        return self.kind >= 20000 and self.kind < 30000
 
     def is_addressable(self) -> bool:
-        return 30000 <= self.kind and self.kind < 40000
+        return self.kind >= 30000 and self.kind < 40000
 
     @classmethod
     def from_json(cls, json_string: str) -> Event:

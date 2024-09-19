@@ -1,6 +1,7 @@
 # this nostr module is designed to give a good ability of manipulating to higher layer.
 # then we can perform flexible tests using it and expect failures.
 # this library it not aimed to be used on relay/client codes.
+from __future__ import annotations
 
 import json
 from typing import Dict, List, Optional
@@ -42,7 +43,7 @@ class Filter:
         return json.dumps(filter_dict)
 
     def match(self, event: Event) -> bool:
-        if Event == None:
+        if Event is None:
             return False
 
         if len(self.ids) != 0 and not self.ids.__contains__(event.id):
@@ -78,7 +79,7 @@ class Filter:
         return True
 
     @classmethod
-    def from_json(cls, json_string: str) -> "Filter":
+    def from_json(cls, json_string: str) -> Filter:
         data = json.loads(json_string)
         return cls(
             data.get("ids"),
