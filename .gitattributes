@@ -1,3 +1,4 @@
-*.md linguist-detectable
 *.toml linguist-detectable
+*.json linguist-detectable
 *.txt linguist-detectable
+*.md linguist-detectable

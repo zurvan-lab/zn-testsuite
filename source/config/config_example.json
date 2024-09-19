@@ -1,0 +1,11 @@
+{
+  "name": "immortal relay basic test.",
+  "target": "ws://localhost:7777",
+  "tests": {
+    "protocol": {
+      "outdir": "/reports/znrt_immo",
+      "cases": ["*"],
+      "excluded_cases": []
+    }
+  }
+}

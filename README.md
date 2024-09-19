@@ -1,6 +1,6 @@
 # zn-testsuite
 
-the zn test suite is a nostr relay test suite which helps relay testers to test their relay implementation.
+the zn test suite is a nostr relay test suite which helps relay developers to test their relay implementation.
 
 > [!WARNING]
 > this repo is work in progress and is not useable.
@@ -21,7 +21,8 @@ all kind of contribution is welcomed and open.
 feel free to open a pr and make code contribution or just open an issue to suggest new features or report bugs.
 you can make financial contribution and support using bitcoin and lightning:
 
-**btc**: 
+**btc**:
+
 ```bc1qxd3p6a46uzae86elteha7tygcz7f56mvvlznza```
 
 **lightning**: ```todo```
