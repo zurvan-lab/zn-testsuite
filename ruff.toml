@@ -20,11 +20,16 @@ ignore = [
     "D107",
     "D203",
     "D212",
+    "TD003",
+    "TD002",
+    "TD007",
+    "FIX002",
     "COM812",
     "ISC001",
     "D205",
     "PLR2004",
     "PLR0913",
+    "FA100", # todo::: remove me!
 ]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.

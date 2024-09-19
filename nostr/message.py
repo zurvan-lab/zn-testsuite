@@ -4,17 +4,20 @@
 
 import json
 
+from .event import Event
+
 # TODO::: invalid message, random message and more.
 
+
 class Message:
-    def __init__(self, message_type, data):
+    def __init__(self, message_type: str, data: Event) -> None:
         self.message_type = message_type
         self.data = data
 
-    def to_json(self):
-        return json.dumps([self.message_type, json.loads(self.data)])
+    def to_json(self) -> str:
+        return json.dumps([self.message_type, json.loads(self.data.to_json())])
 
     @classmethod
-    def from_json(cls, json_string):
+    def from_json(cls, json_string: str) -> "Message":
         data = json.loads(json_string)
         return cls(data[0], data[1])
