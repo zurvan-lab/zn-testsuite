@@ -3,6 +3,10 @@
 the zn test suite is a nostr relay test suite which helps relay developers to test their relay implementation.
 
 > [!WARNING]
+> this code is not intended to be used on production relays with users since it generates spam and radnom events and requests.
+> this code in intended to be used on test and local relays or on workflows.
+
+> [!WARNING]
 > this repo is work in progress and is not useable.
 
 
