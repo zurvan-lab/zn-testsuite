@@ -1,6 +1,6 @@
 {
   "name": "immortal relay basic test.",
-  "target": "ws://localhost:7777",
+  "target": "wss://nos.lol",
   "tests": {
     "protocol": {
       "outdir": "/reports/znrt_immo",

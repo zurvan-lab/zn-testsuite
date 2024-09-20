@@ -7,7 +7,7 @@ import hashlib
 import json
 from typing import List
 
-from secp256k1 import PrivateKey
+from .keys import PrivateKey
 
 
 class Event:
@@ -36,7 +36,7 @@ class Event:
         return hashlib.sha256(serialized_event).digest()
 
     def sign_valid(self, pk: PrivateKey) -> None:
-        self.sig = pk.schnorr_sign(self.calculate_id(), "").hex()
+        self.sig = pk.sign_message_hash(self.calculate_id())
 
     def set_id_valid(self) -> None:
         self.id = self.calculate_id().hex()
