@@ -4,12 +4,9 @@
 from __future__ import annotations
 
 import json
-import random
-import string
 from typing import Dict, List, Optional
 
-from secp256k1 import PrivateKey
-
+from nostr import utils
 from nostr.event import Event
 
 
@@ -64,18 +61,7 @@ class Filter:
             return False
 
         for name, values in self.tag_filters.items():
-            has_value = False
-            for t in event.tags:
-                if len(t) < 2:
-                    continue
-
-                if "#" + t[0] == name:
-                    for v in values:
-                        if v == t[1]:
-                            has_value = True
-                            break
-
-            if not has_value:
+            if not utils.contains_any(event.tags, name, values):
                 return False
 
         return True
