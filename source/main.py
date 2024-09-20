@@ -25,14 +25,16 @@ async def main() -> None:
 
     if cfg.tests["protocol"]:
         async with connect(cfg.target) as connection:
-            private_key_bytes = os.urandom(32)
-            sec = PrivateKey(private_key_bytes)
+            sec = PrivateKey.get_random_key()
             pub = sec.public_key.hex()
+
             event = Event(pub, 1726846204, 1, [], "test")
             event.sign_valid(sec)
             event.set_id_valid()
+
             print(event.to_json())
-            msg = Message("EVENT", event)
+
+            msg = Message.event(event)
             await connection.send(msg.to_json())
 
             resp = await connection.recv()

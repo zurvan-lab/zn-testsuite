@@ -17,6 +17,10 @@ class Message:
         return json.dumps([self.message_type, json.loads(self.data.to_json())])
 
     @classmethod
+    def event(cls, event: Event) -> Message:
+        return cls("EVENT", event)
+
+    @classmethod
     def from_json(cls, json_string: str) -> Message:
         data = json.loads(json_string)
         return cls(data[0], data[1])
