@@ -8,19 +8,14 @@ import json
 from .event import Event
 
 
-class Message:
-    def __init__(self, message_type: str, data: Event) -> None:
-        self.message_type = message_type
-        self.data = data
+class EventToRelayMessage:
+    def __init__(self, event: Event) -> None:
+        self.event = event
 
     def to_json(self) -> str:
-        return json.dumps([self.message_type, json.loads(self.data.to_json())])
+        return json.dumps(["EVENT", json.loads(self.event.to_json())])
 
     @classmethod
-    def event(cls, event: Event) -> Message:
-        return cls("EVENT", event)
-
-    @classmethod
-    def from_json(cls, json_string: str) -> Message:
+    def from_json(cls, json_string: str) -> EventToRelayMessage:
         data = json.loads(json_string)
-        return cls(data[0], data[1])
+        return cls(data[1])

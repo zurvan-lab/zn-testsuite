@@ -5,7 +5,9 @@
     "protocol": {
       "outdir": "/reports/znrt_immo",
       "cases": ["*"],
-      "excluded_cases": []
+      "excluded_cases": [],
+      "whitelisted_key1": "e86703b8f6cf3631b1110c0a26676e1c43023c65fb9879d9129c942c06b2e8db",
+      "whitelisted_key2": "38ee6b4c75a02f5a863ac795c1f4fba5896b5aed21106bb33073e29057c22c9e"
     }
   }
 }

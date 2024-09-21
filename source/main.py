@@ -1,12 +1,8 @@
 import argparse
 import asyncio
-import binascii
-import os
 
 from config.config import Config
-from nostr.event import Event
-from nostr.message import Message
-from nostr.keys import PrivateKey, PublicKey
+from protocol.protocol import Protocol
 from websockets.asyncio.client import connect
 
 
@@ -24,21 +20,11 @@ async def main() -> None:
         print(f"failed to load configuration: {e}")
 
     if cfg.tests["protocol"]:
-        async with connect(cfg.target) as connection:
-            sec = PrivateKey.get_random_key()
-            pub = sec.public_key.hex()
-
-            event = Event(pub, 1726846204, 1, [], "test")
-            event.sign_valid(sec)
-            event.set_id_valid()
-
-            print(event.to_json())
-
-            msg = Message.event(event)
-            await connection.send(msg.to_json())
-
-            resp = await connection.recv()
-            print(resp)
+        connection1, connection2 = await connect(cfg.target), await connect(cfg.target)
+        protocol = Protocol(cfg.get_protocol_model(), connection1, connection2)
+        protocol.run()
+        await connection1.close()
+        await connection2.close()
 
 
 if __name__ == "__main__":

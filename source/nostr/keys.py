@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-import secrets
 import os
+import secrets
 
 import secp256k1
 
@@ -27,6 +27,10 @@ class PrivateKey:
 
         sk = secp256k1.PrivateKey(self.raw_secret)
         self.public_key = PublicKey(sk.pubkey.serialize()[1:])
+
+    @classmethod
+    def from_hex(cls, hex: str) -> PrivateKey:
+        return cls(bytes.fromhex(hex))
 
     def hex(self) -> str:
         return self.raw_secret.hex()

@@ -40,6 +40,9 @@ and example test object for this model:
       "outdir": "/reports/znrt_immo", // the directory that going to contain the result of test.
       "cases": ["*"],                 // test cases to be executed.
       "excluded_cases": []            // if you want to exclude any case.
+      // provide 2 keys that are able to read and write to relay.
+      "whitelisted_key1": "e86703b8f6cf3631b1110c0a26676e1c43023c65fb9879d9129c942c06b2e8db",
+      "whitelisted_key2": "e86703b8f6cf3631b1110c0a26676e1c43023c65fb9879d9129c942c06b2e8db"
     }
   }
 }
@@ -49,6 +52,3 @@ here is the lits of test cases for `protocol` model:
 
 - `NIP-<X>`, tests an specific NIP and makes sure that it is implemented correctly.
 - `ZNRP`, znr protocol model test cases. (todo(?)),
-
-> note: for all cases in this document wild card is accepted.
-> valid examples: `"NIP-*"`, `NIP-01`.

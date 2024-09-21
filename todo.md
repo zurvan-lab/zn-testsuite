@@ -4,11 +4,12 @@
 
 # v0.2.0
 
-- [ ] fuzz test.
 - [ ] stress test.
 - [ ] running on docker.
+- [ ] repl for connection to relay and doing manual tests.
 
 # v0.3.0
 
+- [ ] fuzz test.
 - [ ] running as github action.
 - [ ] standard rate and measurement.
