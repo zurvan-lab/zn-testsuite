@@ -30,15 +30,26 @@ class Filter:
         self.limit = limit
 
     def to_json(self) -> str:
-        filter_dict = {
-            "ids": self.ids,
-            "authors": self.authors,
-            "kinds": self.kinds,
-            **self.tag_filters,
-            "since": self.since,
-            "until": self.until,
-            "limit": self.limit,
-        }
+        filter_dict = {**self.tag_filters}
+
+        if self.ids:
+            filter_dict["ids"] = self.ids
+
+        if self.kinds:
+            filter_dict["kinds"] = self.kinds
+
+        if self.authors:
+            filter_dict["authors"] = self.authors
+
+        if self.since:
+            filter_dict["since"] = self.since
+
+        if self.until:
+            filter_dict["until"] = self.until
+
+        if self.limit:
+            filter_dict["limit"] = self.limit
+
         return json.dumps(filter_dict)
 
     def match(self, event: Event) -> bool:

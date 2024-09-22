@@ -22,17 +22,17 @@ class Protocol:
         self.white_listed_key2 = PrivateKey.from_hex(cfg.whitelisted_key2)
         self.report = Report()
 
-    def run(self) -> None:
+    async def run(self) -> None:
         if self.config.cases.__contains__("*"):
             for case in ALL_CASES:
-                pass
+                await self.run_case(case)
 
             for case in self.config.cases:
-                pass
+                await self.run_case(case)
 
-    def run_case(self, case: str) -> None:
+    async def run_case(self, case: str) -> None:
         if case == "NIP-01":
-            self.nip01_case()
+            await self.nip01_case()
 
-    def nip01_case(self) -> None:
+    async def nip01_case(self) -> None:
         pass
